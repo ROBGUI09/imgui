@@ -10271,7 +10271,7 @@ static void ImGui::NavUpdate()
         g.NavWindow->NavLastChildNavWindow = NULL;
 
     // Update CTRL+TAB and Windowing features (hold Square to move/resize/etc.)
-    NavUpdateWindowing();
+    // NavUpdateWindowing();
 
     // Set output flags for user application
     io.NavActive = (nav_keyboard_active || nav_gamepad_active) && g.NavWindow && !(g.NavWindow->Flags & ImGuiWindowFlags_NoNavInputs);
@@ -10859,8 +10859,8 @@ static void ImGui::NavUpdateWindowing()
 
     ImGuiWindow* modal_window = GetTopMostPopupModal();
     bool allow_windowing = (modal_window == NULL);
-    if (!allow_windowing)
-        g.NavWindowingTarget = NULL;
+    //if (!allow_windowing)
+    g.NavWindowingTarget = NULL;
 
     // Fade out
     if (g.NavWindowingTargetAnim && g.NavWindowingTarget == NULL)
